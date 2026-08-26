@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ganesh Wankhade — .NET Developer</title>
-<meta name="description" content="Ganesh Wankhade — .NET Developer building enterprise APIs, security tooling, and data pipelines. Portfolio featuring StreamGuard and other projects.">
+<meta name="description" content="Ganesh Wankhade — .NET Developer building enterprise APIs, security tooling, and data pipelines.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -290,7 +290,6 @@
     <nav class="links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#streamguard">StreamGuard</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact" class="nav-cta">Contact</a>
@@ -305,17 +304,17 @@
       <span class="kicker"><span class="pulse"></span>Open to new opportunities</span>
       <h1 class="hero-title">.NET developer building <span class="grad">secure, high-throughput</span> backend systems.</h1>
       <p class="hero-sub">
-        I'm Ganesh Wankhade — a backend engineer at ARCON Tech Solutions shipping enterprise-grade
-        APIs and security tooling, with a habit of building real, working systems on the side to
-        prove out ideas end to end: rate limiters, anomaly detectors, and the odd neural network from scratch.
+        I'm Ganesh Wankhade — a backend engineer shipping enterprise-grade APIs and security
+        tooling, with a habit of building real, working systems on the side to prove out ideas
+        end to end: rate limiters, anomaly detectors, and the odd neural network from scratch.
       </p>
       <div class="hero-actions">
-        <a href="#streamguard" class="btn btn-primary">See StreamGuard →</a>
+        <a href="#projects" class="btn btn-primary">See Projects →</a>
         <a href="https://github.com/ganeshwankhade" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
       <div class="stat-row">
-        <div class="stat"><div class="num">300+</div><div class="lbl">APIs shipped at ARCON</div></div>
+        <div class="stat"><div class="num">300+</div><div class="lbl">Enterprise APIs shipped</div></div>
         <div class="stat"><div class="num">100%</div><div class="lbl">SLA compliance</div></div>
         <div class="stat"><div class="num">2+ yrs</div><div class="lbl">.NET / C# in production</div></div>
         <div class="stat"><div class="num">0</div><div class="lbl">Critical prod incidents</div></div>
@@ -332,10 +331,10 @@
           <span class="eyebrow">About</span>
           <h2 class="section-title">Backend-first, with a security lean</h2>
           <p>
-            I'm currently a <strong>.NET Developer at ARCON Tech Solutions</strong>, working on
-            <strong>DRUT</strong>, an enterprise security &amp; compliance platform. My day-to-day is
-            architecting APIs, decoupling legacy systems into scalable services, and building
-            data-intelligence pipelines that turn raw activity into risk insight.
+            I'm currently a <strong>.NET Developer</strong>, working on an enterprise security
+            &amp; compliance platform. My day-to-day is architecting APIs, decoupling legacy
+            systems into scalable services, and building data-intelligence pipelines that turn
+            raw activity into risk insight.
           </p>
           <p>
             Before that, I interned at <strong>Reliance Industries</strong> on their Manufacturing
@@ -343,14 +342,13 @@
             can cut operational complexity by 70-80% across very different business units.
           </p>
           <p>
-            Outside of work I build complete systems rather than toy demos — most recently
-            <strong>StreamGuard</strong>, an API rate-limiting and abuse-detection middleware with a
-            real ML.NET anomaly detector and a live dashboard, covered in detail below.
+            Outside of work I build complete systems rather than toy demos — see the
+            <strong>Projects</strong> section below for what I've shipped on my own time.
           </p>
         </div>
         <div class="info-card">
           <div class="info-row"><span class="k">Location</span><span class="v">Mumbai, Maharashtra, India</span></div>
-          <div class="info-row"><span class="k">Role</span><span class="v">.NET Developer, ARCON Tech Solutions</span></div>
+          <div class="info-row"><span class="k">Role</span><span class="v">.NET Developer</span></div>
           <div class="info-row"><span class="k">Education</span><span class="v">B.Tech, COEP Technological University</span></div>
           <div class="info-row"><span class="k">Focus</span><span class="v">C# · ASP.NET Core · Distributed Systems</span></div>
           <div class="info-row"><span class="k">Certification</span><span class="v">Azure Fundamentals (AZ-900)</span></div>
@@ -414,81 +412,33 @@
 
   <hr class="divider">
 
-  <section id="streamguard">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Featured Project</span>
-        <h2 class="section-title">StreamGuard</h2>
-        <p class="section-desc">The project I just shipped — a real rate-limiting and anomaly-detection system, not a toy.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-top">
-          <span class="feature-badge">ASP.NET Core · Redis · ML.NET</span>
-          <div class="feature-links">
-            <a class="icon-link" href="https://github.com/ganeshwankhade/StreamGuard" target="_blank" rel="noopener">↗ Source</a>
-          </div>
-        </div>
-        <h3 class="feature-title">Live rate-limiting &amp; abuse-detection middleware for ASP.NET Core</h3>
-        <p class="feature-tagline">
-          StreamGuard sits in front of any ASP.NET Core API and answers two questions on every
-          request, per client, in real time: is this client over its rate limit right now, and does
-          its traffic look statistically abnormal compared to its own recent history? Clients that
-          trip either check get flagged or blocked (HTTP 429) — visible live on a React dashboard,
-          with zero changes to the business logic being protected.
-        </p>
-
-        <div class="feature-cols">
-          <div class="feature-col">
-            <h4>What it does</h4>
-            <ul>
-              <li><strong>Hard cap</strong> via a sliding-window-log rate limiter — a Redis sorted set per client, evicted/counted/admitted atomically in one Lua script round trip.</li>
-              <li><strong>Behavioral signal</strong> via ML.NET's <code>DetectIidSpike</code> transform over each client's rolling per-minute request counts — catches clients that stay under the hard cap but suddenly deviate from their own normal pattern.</li>
-              <li>Every response carries <code>X-StreamGuard-Limit / -Remaining / -Reset</code> headers.</li>
-              <li>A live React + Vite dashboard polls the admin endpoints every 2s to show flagged/blocked clients and usage stats in real time.</li>
-            </ul>
-          </div>
-          <div class="feature-col">
-            <h4>Why it's solid engineering</h4>
-            <ul>
-              <li><strong>Race-free by construction</strong>: the check-and-increment runs as one atomic Lua script, proven by a concurrency test that fires 3× the limit at once and asserts exactly the limit gets through.</li>
-              <li><strong>Real ML.NET usage</strong> without a training pipeline — a built-in, untrained statistical transform (i.i.d. spike detection), unit-tested with synthetic arrays and integration-tested against real Redis.</li>
-              <li><strong>Verified end-to-end</strong>: <code>docker compose up --build</code> was run against the full stack — API, dashboard, and Redis all came up healthy and correctly blocked simulated abusive clients under load.</li>
-              <li>Tested with xUnit + Testcontainers.Redis, including two real bugs caught and fixed during Docker verification (a config-timing bug and a missing <code>.dockerignore</code>).</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="flow-diagram">
-<span class="step">Client request</span><span class="arrow">→</span>already blocked?<span class="arrow">→</span><span class="step">Redis sliding-window check</span><span class="arrow">→</span>over limit? <span class="arrow">→</span> 429<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="arrow">↓ under limit</span><br>
-<span class="step">ML.NET spike scorer</span> (per-minute history) <span class="arrow">→</span> anomalous? <span class="arrow">→</span> flag / 429<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="arrow">↓ clean</span><br>
-<span class="step">Your API controllers</span> &nbsp;|&nbsp; <span class="step">React dashboard</span> polls admin endpoints every 2s
-        </div>
-
-        <div class="stack-pills">
-          <span class="pill">ASP.NET Core 8</span>
-          <span class="pill">Redis (sorted sets + Lua)</span>
-          <span class="pill">ML.NET — DetectIidSpike</span>
-          <span class="pill">React + Vite + TypeScript</span>
-          <span class="pill">xUnit + Testcontainers</span>
-          <span class="pill">Docker Compose + nginx</span>
-          <span class="pill">HyperLogLog (PFADD/PFCOUNT)</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
   <section id="projects">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">More Projects</span>
+        <span class="eyebrow">Projects</span>
         <h2 class="section-title">Side builds</h2>
       </div>
       <div class="proj-grid">
+        <div class="proj-card">
+          <div class="proj-head">
+            <span class="proj-title">StreamGuard — Rate-Limit &amp; Abuse Detection Middleware</span>
+            <span class="proj-year">2026</span>
+          </div>
+          <div class="proj-desc">
+            <ul>
+              <li>Built an ASP.NET Core middleware that rate-limits and flags abusive clients in real time using a Redis sliding-window-log limiter (atomic Lua script, race-free under concurrency) plus an ML.NET <code>DetectIidSpike</code> anomaly detector over each client's own request-rate history.</li>
+              <li>Shipped a React + Vite dashboard that polls admin endpoints every 2s to show flagged/blocked clients and live usage stats, with zero changes required to the API being protected.</li>
+              <li>Verified end-to-end with Docker Compose (API, dashboard, Redis) and tested with xUnit + Testcontainers, including a concurrency test proving exactly the configured limit gets through under 3× load.</li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tag">ASP.NET Core</span><span class="tag">Redis</span><span class="tag">ML.NET</span>
+            <span class="tag">React + TypeScript</span><span class="tag">Docker</span><span class="tag">xUnit</span>
+          </div>
+          <div class="tag-row" style="margin-top:14px;">
+            <a class="icon-link" href="https://github.com/ganeshwankhade/StreamGuard" target="_blank" rel="noopener">↗ View Source</a>
+          </div>
+        </div>
         <div class="proj-card">
           <div class="proj-head">
             <span class="proj-title">Spam Email Detection — Neural Network from Scratch</span>
